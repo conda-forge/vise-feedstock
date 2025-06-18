@@ -1,5 +1,5 @@
 {% set name = "vise" %}
-{% set version = "0.9.4" %}
+{% set version = "0.9.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/vise-{{ version }}.tar.gz
-  sha256: 8146dad1d1249df649ea1b1fc84e11c744d82ccdb2b7ea6b36e96dbdf2a83858
+  sha256: a228e60b91510ac339dcd6826673f46205bd8d4b07f4b6f18913a75dac5632f2
   patches:
     - requirements.patch
 
