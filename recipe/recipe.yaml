@@ -42,7 +42,9 @@ tests:
       imports:
         - vise
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
   summary: Package for handling io of vasp package in kumagai group at IMR, Tohoku university
