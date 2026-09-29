@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: vise
-  version: "0.9.5"
+  version: 0.9.6
 
 package:
   name: ${{ name|lower }}
@@ -10,12 +10,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/vise-${{ version }}.tar.gz
-  sha256: a228e60b91510ac339dcd6826673f46205bd8d4b07f4b6f18913a75dac5632f2
+  sha256: 239fa43bc05661b476ab536c7001bff8639e4b23a42f01f873ec33991a805c7a
   patches:
     - requirements.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -31,12 +31,11 @@ requirements:
   run:
     - mp-api
     - python >=${{ python_min }}
-    - pymatgen
     - seekpath
     - num2words
     - more-itertools
     - phonopy
-
+    - pymatgen-core
 tests:
   - python:
       imports:
@@ -44,7 +43,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
 
 about:
   summary: Package for handling io of vasp package in kumagai group at IMR, Tohoku university
